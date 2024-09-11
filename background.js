@@ -2,7 +2,7 @@ chrome.runtime.onInstalled.addListener(() => {
   const sites = [
     { id: "PageSpeed", title: "PageSpeed" },
     { id: "BuiltWith", title: "BuiltWith" },
-    { id: "Cloudinary", title: "Cloudinary Web Speed Test" },
+    { id: "Cloudinary", title: "Image Analysis Tool by Cloudinary" },
   ];
 
   for (const site of sites) {
@@ -41,7 +41,7 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
         chrome.tabs.create({ url: analysisUrl });
       } catch (error) {
         console.error(
-          "Erro ao enviar URL para Cloudinary Web Speed Test:",
+          "Erro ao enviar URL para Image Analysis Tool by Cloudinary:",
           error
         );
       }

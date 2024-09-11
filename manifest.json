@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Celeridade",
-    "version": "0.1",
+    "version": "0.1.1",
     "description": "Acesse ferramentas de análise de performance de sites através do menu de contexto.",
     "homepage_url": "https://github.com/Celere-WP/celeridade",
     "author": "Célere",

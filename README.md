@@ -1,6 +1,6 @@
 # Celeridade
 
-Acesse PageSpeed, BuiltWith e Cloudinary Web Speed Test através do menu de contexto em navegadores baseados em Chromium.
+Acesse PageSpeed, BuiltWith e Image Analysis Tool by Cloudinary através do menu de contexto em navegadores baseados em Chromium.
 
 ## Instalação
 
@@ -21,4 +21,4 @@ No site que deseja analisar, clique com o botão direito em qualquer área da p�
 ## Notas
 
 - O uso de VPNs não é permitido pela ferramenta **BuiltWith**.
-- A análise feita pela ferramenta **Cloudinary Web Speed Test** leva alguns milésimos para iniciar; após selecioná-la no menu, aguarde.
+- A análise feita pela ferramenta **Image Analysis Tool by Cloudinary** leva alguns milésimos para iniciar; após selecioná-la no menu, aguarde.
