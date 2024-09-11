@@ -4,7 +4,7 @@ Acesse PageSpeed, BuiltWith e Image Analysis Tool by Cloudinary através do menu
 
 ## Instalação
 
-- Faça o download do arquivo `celeridade-v0.1.zip`.
+- [Faça o download do arquivo](https://github.com/Celere-WP/celeridade/releases).
 - Extraia o arquivo ZIP.
 - Abra o navegador baseado em Chromium e vá para `chrome://extensions`.
 - Ative o "Modo Desenvolvedor" (localizado no canto superior direito).
