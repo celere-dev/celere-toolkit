@@ -1,6 +1,6 @@
-# Celeridade
+# celtest
 
-Acesse ferramentas de análise de performance através do menu de contexto em navegadores baseados em Chromium.
+Acesse facilmente ferramentas de análise de web performance através do menu de contexto em navegadores baseados em Chromium.
 
 ## Ferramentas
 
