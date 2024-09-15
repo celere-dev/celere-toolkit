@@ -1,6 +1,6 @@
 # Celeridade
 
-Acesse PageSpeed, BuiltWith e Image Analysis Tool by Cloudinary através do menu de contexto em navegadores baseados em Chromium.
+Acesse PageSpeed, BuiltWith, Image Analysis Tool by Cloudinary e W3C Markup Validation Service através do menu de contexto em navegadores baseados em Chromium.
 
 ## Instalação
 
@@ -18,7 +18,5 @@ Acesse PageSpeed, BuiltWith e Image Analysis Tool by Cloudinary através do menu
 
 No site que deseja analisar, clique com o botão direito em qualquer área da página para acessar o menu; uma nova aba será aberta na ferramenta selecionada e a análise começará automaticamente.
 
-## Notas
-
-- O uso de VPNs não é permitido pela ferramenta **BuiltWith**.
-- A análise feita pela ferramenta **Image Analysis Tool by Cloudinary** leva alguns milésimos para iniciar; após selecioná-la no menu, aguarde.
+> [!NOTE]
+> A análise feita pela ferramenta **Image Analysis Tool by Cloudinary** leva alguns segundos para iniciar; após selecioná-la no menu, aguarde.

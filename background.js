@@ -3,6 +3,7 @@ chrome.runtime.onInstalled.addListener(() => {
     { id: "PageSpeed", title: "PageSpeed" },
     { id: "BuiltWith", title: "BuiltWith" },
     { id: "Cloudinary", title: "Image Analysis Tool by Cloudinary" },
+    { id: "W3C", title: "W3C Markup Validation Service" },
   ];
 
   for (const site of sites) {
@@ -21,6 +22,7 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
     )}`,
     BuiltWith: `https://builtwith.com/?${encodeURIComponent(tab.url)}`,
     Cloudinary: `https://webspeedtest-api.cloudinary.com/test/run`,
+    W3C: `https://validator.w3.org/nu/?doc=${encodeURIComponent(tab.url)}`,
   };
 
   if (info.menuItemId === "Cloudinary") {
