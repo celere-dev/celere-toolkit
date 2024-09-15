@@ -2,6 +2,7 @@ chrome.runtime.onInstalled.addListener(() => {
   const sites = [
     { id: "PageSpeed", title: "PageSpeed" },
     { id: "BuiltWith", title: "BuiltWith" },
+    { id: "Yellow", title: "Yellow Lab Tools" },
     { id: "Cloudinary", title: "Image Analysis Tool by Cloudinary" },
     { id: "W3C", title: "W3C Markup Validation Service" },
   ];
@@ -21,12 +22,13 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
       tab.url
     )}`,
     BuiltWith: `https://builtwith.com/?${encodeURIComponent(tab.url)}`,
-    Cloudinary: `https://webspeedtest-api.cloudinary.com/test/run`,
+    Yellow: "https://yellowlab.tools/api/runs",
+    Cloudinary: "https://webspeedtest-api.cloudinary.com/test/run",
     W3C: `https://validator.w3.org/nu/?doc=${encodeURIComponent(tab.url)}`,
   };
 
   if (info.menuItemId === "Cloudinary") {
-    async function sendPostRequest(url) {
+    async function sendPostRequestCloudinary(url) {
       try {
         const response = await fetch(siteUrls.Cloudinary, {
           method: "POST",
@@ -49,7 +51,36 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
       }
     }
 
-    sendPostRequest(tab.url);
+    sendPostRequestCloudinary(tab.url);
+  } else if (info.menuItemId === "Yellow") {
+    async function sendPostRequestYellow(url) {
+      try {
+        const request = {
+          url: url,
+          waitForResponse: false,
+          screenshot: true,
+          device: "phone",
+        };
+
+        const response = await fetch(siteUrls.Yellow, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(request),
+        });
+
+        const data = await response.json();
+        const runId = data.runId;
+        const runUrl = `https://yellowlab.tools/queue/${runId}`;
+
+        chrome.tabs.create({ url: runUrl });
+      } catch (error) {
+        console.error("Erro ao enviar URL para Yellow Lab Tools:", error);
+      }
+    }
+
+    sendPostRequestYellow(tab.url);
   } else if (siteUrls[info.menuItemId]) {
     chrome.tabs.create({ url: siteUrls[info.menuItemId] });
   }

@@ -1,6 +1,14 @@
 # Celeridade
 
-Acesse PageSpeed, BuiltWith, Image Analysis Tool by Cloudinary e W3C Markup Validation Service através do menu de contexto em navegadores baseados em Chromium.
+Acesse ferramentas de análise de performance através do menu de contexto em navegadores baseados em Chromium.
+
+## Ferramentas
+
+- [PageSpeed](https://pagespeed.web.dev/)
+- [BuiltWith](https://builtwith.com/)
+- [Yellow Lab Tools](https://yellowlab.tools/)
+- [Image Analysis Tool by Cloudinary](https://webspeedtest.cloudinary.com/)
+- [W3C Markup Validation Service](https://validator.w3.org/)
 
 ## Instalação
 
