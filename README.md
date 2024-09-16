@@ -1,6 +1,16 @@
-# Celeridade
+# Célere Toolkit
 
-Acesse PageSpeed, BuiltWith e Image Analysis Tool by Cloudinary através do menu de contexto em navegadores baseados em Chromium.
+Acesse facilmente ferramentas de análise de web performance através do menu de contexto em navegadores baseados em Chromium.
+
+## Ferramentas
+
+- [PageSpeed](https://pagespeed.web.dev/)
+- [BuiltWith](https://builtwith.com/)
+- [Yellow Lab Tools](https://yellowlab.tools/)
+- [InspectWP](https://inspectwp.com/en)
+- [Siteliner](https://www.siteliner.com/)
+- [Image Analysis Tool by Cloudinary](https://webspeedtest.cloudinary.com/)
+- [W3C Markup Validation Service](https://validator.w3.org/)
 
 ## Instalação
 
@@ -18,7 +28,5 @@ Acesse PageSpeed, BuiltWith e Image Analysis Tool by Cloudinary através do menu
 
 No site que deseja analisar, clique com o botão direito em qualquer área da página para acessar o menu; uma nova aba será aberta na ferramenta selecionada e a análise começará automaticamente.
 
-## Notas
-
-- O uso de VPNs não é permitido pela ferramenta **BuiltWith**.
-- A análise feita pela ferramenta **Image Analysis Tool by Cloudinary** leva alguns milésimos para iniciar; após selecioná-la no menu, aguarde.
+> [!NOTE]
+> A análise feita pela ferramenta **Image Analysis Tool by Cloudinary** leva alguns segundos para iniciar; após selecioná-la no menu, aguarde.

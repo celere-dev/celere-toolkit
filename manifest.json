@@ -1,13 +1,19 @@
 {
     "manifest_version": 3,
-    "name": "Celeridade",
-    "version": "0.1.1",
-    "description": "Acesse ferramentas de análise de performance de sites através do menu de contexto.",
-    "homepage_url": "https://github.com/Celere-WP/celeridade",
+    "name": "Célere Toolkit",
+    "version": "0.2",
+    "description": "Acesse facilmente ferramentas de análise de web performance através do menu de contexto.",
+    "homepage_url": "https://github.com/Celere-WP/celere-toolkit",
     "author": "Célere",
     "permissions": [
       "contextMenus",
-      "tabs"
+      "tabs",
+      "activeTab",
+      "scripting"
+    ],
+    "host_permissions": [
+      "https://www.siteliner.com/*",
+      "https://inspectwp.com/en/*"
     ],
     "background": {
       "service_worker": "background.js"
