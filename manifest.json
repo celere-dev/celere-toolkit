@@ -1,9 +1,9 @@
 {
     "manifest_version": 3,
-    "name": "celtest",
+    "name": "Célere Toolkit",
     "version": "0.2",
     "description": "Acesse facilmente ferramentas de análise de web performance através do menu de contexto.",
-    "homepage_url": "https://github.com/Celere-WP/celtest",
+    "homepage_url": "https://github.com/Celere-WP/celere-toolkit",
     "author": "Célere",
     "permissions": [
       "contextMenus",

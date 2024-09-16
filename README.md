@@ -1,4 +1,4 @@
-# celtest
+# Célere Toolkit
 
 Acesse facilmente ferramentas de análise de web performance através do menu de contexto em navegadores baseados em Chromium.
 
