@@ -3,6 +3,8 @@ chrome.runtime.onInstalled.addListener(() => {
     { id: "PageSpeed", title: "PageSpeed" },
     { id: "BuiltWith", title: "BuiltWith" },
     { id: "Yellow", title: "Yellow Lab Tools" },
+    { id: "InspectWP", title: "InspectWP" },
+    { id: "Siteliner", title: "Siteliner" },
     { id: "Cloudinary", title: "Image Analysis Tool by Cloudinary" },
     { id: "W3C", title: "W3C Markup Validation Service" },
   ];
@@ -23,6 +25,8 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
     )}`,
     BuiltWith: `https://builtwith.com/?${encodeURIComponent(tab.url)}`,
     Yellow: "https://yellowlab.tools/api/runs",
+    InspectWP: "https://inspectwp.com/en",
+    Siteliner: "https://www.siteliner.com/",
     Cloudinary: "https://webspeedtest-api.cloudinary.com/test/run",
     W3C: `https://validator.w3.org/nu/?doc=${encodeURIComponent(tab.url)}`,
   };
@@ -81,6 +85,64 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
     }
 
     sendPostRequestYellow(tab.url);
+  } else if (info.menuItemId === "InspectWP") {
+    try {
+      chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+        const activeTab = tabs[0];
+        const activeTabUrl = activeTab.url;
+
+        chrome.tabs.create({ url: siteUrls.InspectWP }, (newTab) => {
+          chrome.tabs.onUpdated.addListener(function onUpdated(
+            tabId,
+            changeInfo
+          ) {
+            if (tabId === newTab.id && changeInfo.status === "complete") {
+              chrome.scripting.executeScript({
+                target: { tabId: newTab.id },
+                func: (url) => {
+                  document.getElementById(
+                    "inspectwp-checker-form-url-input"
+                  ).value = url;
+                  document.querySelector("div.input-group button").click();
+                },
+                args: [activeTabUrl],
+              });
+              chrome.tabs.onUpdated.removeListener(onUpdated);
+            }
+          });
+        });
+      });
+    } catch (error) {
+      console.error("Erro ao enviar URL para InspectWP:", error);
+    }
+  } else if (info.menuItemId === "Siteliner") {
+    try {
+      chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+        const activeTab = tabs[0];
+        const activeTabUrl = activeTab.url;
+
+        chrome.tabs.create({ url: siteUrls.Siteliner }, (newTab) => {
+          chrome.tabs.onUpdated.addListener(function onUpdated(
+            tabId,
+            changeInfo
+          ) {
+            if (tabId === newTab.id && changeInfo.status === "complete") {
+              chrome.scripting.executeScript({
+                target: { tabId: newTab.id },
+                func: (url) => {
+                  document.getElementById("field-domain").value = url;
+                  document.getElementById("button-check-new").click();
+                },
+                args: [activeTabUrl],
+              });
+              chrome.tabs.onUpdated.removeListener(onUpdated);
+            }
+          });
+        });
+      });
+    } catch (error) {
+      console.error("Erro ao enviar URL para Siteliner:", error);
+    }
   } else if (siteUrls[info.menuItemId]) {
     chrome.tabs.create({ url: siteUrls[info.menuItemId] });
   }

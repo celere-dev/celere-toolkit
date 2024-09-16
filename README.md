@@ -7,6 +7,8 @@ Acesse facilmente ferramentas de análise de web performance através do menu de
 - [PageSpeed](https://pagespeed.web.dev/)
 - [BuiltWith](https://builtwith.com/)
 - [Yellow Lab Tools](https://yellowlab.tools/)
+- [InspectWP](https://inspectwp.com/en)
+- [Siteliner](https://www.siteliner.com/)
 - [Image Analysis Tool by Cloudinary](https://webspeedtest.cloudinary.com/)
 - [W3C Markup Validation Service](https://validator.w3.org/)
 

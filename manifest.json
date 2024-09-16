@@ -7,7 +7,13 @@
     "author": "Célere",
     "permissions": [
       "contextMenus",
-      "tabs"
+      "tabs",
+      "activeTab",
+      "scripting"
+    ],
+    "host_permissions": [
+      "https://www.siteliner.com/*",
+      "https://inspectwp.com/en/*"
     ],
     "background": {
       "service_worker": "background.js"
