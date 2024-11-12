@@ -7,6 +7,7 @@ chrome.runtime.onInstalled.addListener(() => {
     { id: "Siteliner", title: "Siteliner" },
     { id: "Cloudinary", title: "Image Analysis Tool by Cloudinary" },
     { id: "W3C", title: "W3C Markup Validation Service" },
+    { id: "All", title: "Abrir todas as ferramentas" },
   ];
 
   for (const site of sites) {
@@ -31,61 +32,84 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
     W3C: `https://validator.w3.org/nu/?doc=${encodeURIComponent(tab.url)}`,
   };
 
-  if (info.menuItemId === "Cloudinary") {
-    async function sendPostRequestCloudinary(url) {
-      try {
-        const response = await fetch(siteUrls.Cloudinary, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ url }),
-        });
+  if (info.menuItemId === "All") {
+    sendPostRequestCloudinary(tab.url);
+    sendPostRequestYellow(tab.url);
+    openInspectWP();
+    openSiteliner();
 
-        const data = await response.json();
-        const analysisId = data.data.testId;
-        const analysisUrl = `https://webspeedtest.cloudinary.com/results/${analysisId}`;
-
-        chrome.tabs.create({ url: analysisUrl });
-      } catch (error) {
-        console.error(
-          "Erro ao enviar URL para Image Analysis Tool by Cloudinary:",
-          error
-        );
+    {
+      for (const [id, url] of Object.entries(siteUrls)) {
+        if (
+          id !== "Cloudinary" &&
+          id !== "Yellow" &&
+          id !== "InspectWP" &&
+          id !== "Siteliner"
+        ) {
+          chrome.tabs.create({ url });
+        }
       }
     }
-
+  } else if (info.menuItemId === "Cloudinary") {
     sendPostRequestCloudinary(tab.url);
   } else if (info.menuItemId === "Yellow") {
-    async function sendPostRequestYellow(url) {
-      try {
-        const request = {
-          url: url,
-          waitForResponse: false,
-          screenshot: true,
-          device: "phone",
-        };
-
-        const response = await fetch(siteUrls.Yellow, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(request),
-        });
-
-        const data = await response.json();
-        const runId = data.runId;
-        const runUrl = `https://yellowlab.tools/queue/${runId}`;
-
-        chrome.tabs.create({ url: runUrl });
-      } catch (error) {
-        console.error("Erro ao enviar URL para Yellow Lab Tools:", error);
-      }
-    }
-
     sendPostRequestYellow(tab.url);
   } else if (info.menuItemId === "InspectWP") {
+    openInspectWP();
+  } else if (info.menuItemId === "Siteliner") {
+    openSiteliner();
+  } else if (siteUrls[info.menuItemId]) {
+    chrome.tabs.create({ url: siteUrls[info.menuItemId] });
+  }
+
+  async function sendPostRequestCloudinary(url) {
+    try {
+      const response = await fetch(siteUrls.Cloudinary, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ url }),
+      });
+
+      const data = await response.json();
+      const analysisId = data.data.testId;
+      const analysisUrl = `https://webspeedtest.cloudinary.com/results/${analysisId}`;
+
+      chrome.tabs.create({ url: analysisUrl });
+    } catch (error) {
+      logging("Image Analysis Tool by Cloudinary", error);
+    }
+  }
+
+  async function sendPostRequestYellow(url) {
+    try {
+      const request = {
+        url: url,
+        waitForResponse: false,
+        screenshot: true,
+        device: "phone",
+      };
+
+      const response = await fetch(siteUrls.Yellow, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(request),
+      });
+
+      const data = await response.json();
+      const runId = data.runId;
+      const runUrl = `https://yellowlab.tools/queue/${runId}`;
+
+      chrome.tabs.create({ url: runUrl });
+    } catch (error) {
+      logging("Yellow Lab Tools", error);
+    }
+  }
+
+  function openInspectWP() {
     try {
       chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
         const activeTab = tabs[0];
@@ -113,9 +137,11 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
         });
       });
     } catch (error) {
-      console.error("Erro ao enviar URL para InspectWP:", error);
+      logging("InspectWP", error);
     }
-  } else if (info.menuItemId === "Siteliner") {
+  }
+
+  function openSiteliner() {
     try {
       chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
         const activeTab = tabs[0];
@@ -141,9 +167,20 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
         });
       });
     } catch (error) {
-      console.error("Erro ao enviar URL para Siteliner:", error);
+      logging("Siteliner", error);
     }
-  } else if (siteUrls[info.menuItemId]) {
-    chrome.tabs.create({ url: siteUrls[info.menuItemId] });
+  }
+
+  function logging(toolName, error) {
+    chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+      const activeTab = tabs[0];
+      chrome.scripting.executeScript({
+        target: { tabId: activeTab.id },
+        func: (errorMessage) => {
+          alert(errorMessage);
+        },
+        args: [`Erro ao enviar URL para ${toolName}: ` + error],
+      });
+    });
   }
 });

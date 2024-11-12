@@ -2,6 +2,9 @@
 
 Acesse facilmente ferramentas de análise de web performance através do menu de contexto em navegadores baseados em Chromium.
 
+> [!IMPORTANT]
+> Cada ferramenta possui suas próprias políticas de acesso: limite de requisições, bloqueio de IPs ou VPNs, e requisitos de login em algumas funcionalidades. Para evitar problemas de acesso, utilize as ferramentas de forma moderada e consulte as políticas diretamente nos sites quando necessário.
+
 ## Ferramentas
 
 - [PageSpeed](https://pagespeed.web.dev/)
