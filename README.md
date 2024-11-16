@@ -2,9 +2,6 @@
 
 Acesse facilmente ferramentas de análise de web performance através do menu de contexto em navegadores baseados em Chromium.
 
-> [!IMPORTANT]
-> Cada ferramenta possui suas próprias políticas de acesso: limite de requisições, bloqueio de IPs ou VPNs, e requisitos de login em algumas funcionalidades. Para evitar problemas de acesso, utilize as ferramentas de forma moderada e consulte as políticas diretamente nos sites quando necessário.
-
 ## Ferramentas
 
 - [PageSpeed](https://pagespeed.web.dev/)
@@ -33,3 +30,5 @@ No site que deseja analisar, clique com o botão direito em qualquer área da p�
 
 > [!NOTE]
 > A análise feita pela ferramenta **Image Analysis Tool by Cloudinary** leva alguns segundos para iniciar; após selecioná-la no menu, aguarde.
+>
+> Cada ferramenta possui suas próprias políticas de acesso: limite de requisições, bloqueio de IPs ou VPNs, e requisitos de login em algumas funcionalidades. Para evitar problemas de acesso, utilize as ferramentas de forma moderada e consulte as políticas diretamente nos sites quando necessário.

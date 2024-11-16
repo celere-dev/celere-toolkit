@@ -11,6 +11,14 @@ chrome.runtime.onInstalled.addListener(() => {
   ];
 
   for (const site of sites) {
+    if (site.id === "All") {
+      chrome.contextMenus.create({
+        id: "separator-before-all",
+        type: "separator",
+        contexts: ["all"],
+      });
+    }
+
     chrome.contextMenus.create({
       id: site.id,
       title: site.title,
