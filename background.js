@@ -7,7 +7,7 @@ chrome.runtime.onInstalled.addListener(() => {
     { id: "Siteliner", title: "Siteliner" },
     { id: "Cloudinary", title: "Image Analysis Tool by Cloudinary" },
     { id: "W3C", title: "W3C Markup Validation Service" },
-    { id: "All", title: "Abrir todas as ferramentas" },
+    { id: "All", title: "Open all tools" },
   ];
 
   for (const site of sites) {
@@ -187,7 +187,7 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
         func: (errorMessage) => {
           alert(errorMessage);
         },
-        args: [`Erro ao enviar URL para ${toolName}: ` + error],
+        args: [`Error sending URL to ${toolName}: ` + error],
       });
     });
   }
