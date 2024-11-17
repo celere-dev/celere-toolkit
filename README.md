@@ -1,3 +1,5 @@
+English (US) | [Português (BR)](./README.pt-BR.md)
+
 # Célere Toolkit
 
 Easily access web performance analysis tools through the context menu in Chromium-based browsers.
@@ -35,4 +37,4 @@ On the site you want to analyze, right-click anywhere on the page to access the 
 
 ## Contributing
 
-Feel free to submit issues or pull requests for any bug fixes or new features. They can be opened in English *ou em Português*.
+Feel free to submit issues or pull requests for any bug fixes or new features. They can be opened in English _ou em Português_.
