@@ -1,8 +1,10 @@
+English (US) | [Português (BR)](./README.pt-BR.md)
+
 # Célere Toolkit
 
-Acesse facilmente ferramentas de análise de web performance através do menu de contexto em navegadores baseados em Chromium.
+Easily access web performance analysis tools through the context menu in Chromium-based browsers.
 
-## Ferramentas
+## Tools
 
 - [PageSpeed](https://pagespeed.web.dev/)
 - [BuiltWith](https://builtwith.com/)
@@ -12,21 +14,27 @@ Acesse facilmente ferramentas de análise de web performance através do menu de
 - [Image Analysis Tool by Cloudinary](https://webspeedtest.cloudinary.com/)
 - [W3C Markup Validation Service](https://validator.w3.org/)
 
-## Instalação
+## Installation
 
-- [Faça o download do arquivo](https://github.com/Celere-WP/celeridade/releases).
-- Extraia o arquivo ZIP.
-- Abra o navegador baseado em Chromium e vá para `chrome://extensions`.
-- Ative o "Modo Desenvolvedor" (localizado no canto superior direito).
-- Clique no botão "Carregar sem compactação" (localizado no canto superior esquerdo).
-- Navegue até o diretório onde você extraiu o arquivo ZIP contendo a extensão.
-- Selecione a pasta da extensão.
+- [Download the file](https://github.com/Celere-WP/celeridade/releases).
+- Extract the ZIP file.
+- Open the Chromium-based browser and go to `chrome://extensions`.
+- Enable "Developer Mode" (located in the upper right corner).
+- Click the "Load unpacked" button (located in the upper left corner).
+- Navigate to the directory where you extracted the ZIP file containing the extension.
+- Select the extension folder.
 
-## Uso
+## Usage
 
-![Printscreen](assets/context-menu.png)
+![Screenshot](assets/context-menu.png)
 
-No site que deseja analisar, clique com o botão direito em qualquer área da página para acessar o menu; uma nova aba será aberta na ferramenta selecionada e a análise começará automaticamente.
+On the site you want to analyze, right-click anywhere on the page to access the menu; a new tab will open in the selected tool and the analysis will start automatically.
 
 > [!NOTE]
-> A análise feita pela ferramenta **Image Analysis Tool by Cloudinary** leva alguns segundos para iniciar; após selecioná-la no menu, aguarde.
+> The analysis performed by the **Image Analysis Tool by Cloudinary** takes a few seconds to start; after selecting it from the menu, please wait.
+>
+> Each tool has its own access policies: request limits, IP or VPN blocking, and login requirements for some features. To avoid access issues, use the tools moderately and refer to the policies directly on the sites when necessary.
+
+## Contributing
+
+Feel free to submit issues or pull requests for any bug fixes or new features. They can be opened in English or Portuguese.

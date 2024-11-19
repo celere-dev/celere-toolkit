@@ -1,10 +1,10 @@
 {
     "manifest_version": 3,
     "name": "Célere Toolkit",
-    "version": "0.2",
-    "description": "Acesse facilmente ferramentas de análise de web performance através do menu de contexto.",
-    "homepage_url": "https://github.com/Celere-WP/celere-toolkit",
-    "author": "Célere",
+    "version": "0.3",
+    "description": "Easily access web performance analysis tools through the context menu.",
+    "homepage_url": "https://github.com/celere-dev/celere-toolkit",
+    "author": "Célere/Claromes",
     "permissions": [
       "contextMenus",
       "tabs",
