@@ -37,4 +37,4 @@ On the site you want to analyze, right-click anywhere on the page to access the 
 
 ## Contributing
 
-Feel free to submit issues or pull requests for any bug fixes or new features. They can be opened in English _ou em Português_.
+Feel free to submit issues or pull requests for any bug fixes or new features. They can be opened in English or Portuguese.
