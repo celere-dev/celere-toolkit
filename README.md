@@ -16,7 +16,7 @@ Easily access web performance analysis tools through the context menu in Chromiu
 
 ## Installation
 
-- [Download the file](https://github.com/Celere-WP/celeridade/releases).
+- [Download the file](https://github.com/celere-dev/toolkit/releases).
 - Extract the ZIP file.
 - Open the Chromium-based browser and go to `chrome://extensions`.
 - Enable "Developer Mode" (located in the upper right corner).

@@ -16,7 +16,7 @@ Acesse facilmente ferramentas de análise de web performance através do menu de
 
 ## Instalação
 
-- [Faça o download do arquivo](https://github.com/Celere-WP/celeridade/releases).
+- [Faça o download do arquivo](https://github.com/celere-dev/toolkit/releases).
 - Extraia o arquivo ZIP.
 - Abra o navegador baseado em Chromium e vá para `chrome://extensions`.
 - Ative o "Modo Desenvolvedor" (localizado no canto superior direito).
