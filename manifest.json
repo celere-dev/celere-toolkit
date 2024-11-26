@@ -3,7 +3,7 @@
     "name": "Célere Toolkit",
     "version": "0.3",
     "description": "Easily access web performance analysis tools through the context menu.",
-    "homepage_url": "https://github.com/celere-dev/celere-toolkit",
+    "homepage_url": "https://github.com/celere-dev/toolkit",
     "author": "Célere/Claromes",
     "permissions": [
       "contextMenus",
